@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-10-05T22:57:46 IST" name="AirlineFrameworkSuite" finished-at="2026-10-05T22:58:25 IST" duration-ms="39083">
+    <groups>
+    </groups>
+    <test started-at="2026-10-05T22:57:46 IST" name="UITests" finished-at="2026-10-05T22:58:20 IST" duration-ms="33720">
+      <class name="com.fasila.automation.tests.FlightBookingTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.fasila.automation.tests.FlightBookingTest@2d1ef81a]" started-at="2026-10-05T22:57:47 IST" name="setUp" finished-at="2026-10-05T22:58:05 IST" duration-ms="18319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="shouldCompleteFlightBookingEndToEnd()[pri:0, instance:com.fasila.automation.tests.FlightBookingTest@2d1ef81a]" started-at="2026-10-05T22:58:05 IST" name="shouldCompleteFlightBookingEndToEnd" finished-at="2026-10-05T22:58:14 IST" duration-ms="9357" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldCompleteFlightBookingEndToEnd -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fasila.automation.tests.FlightBookingTest@2d1ef81a]" started-at="2026-10-05T22:58:14 IST" name="tearDown" finished-at="2026-10-05T22:58:20 IST" duration-ms="5264" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.fasila.automation.tests.FlightBookingTest -->
+    </test> <!-- UITests -->
+    <test started-at="2026-10-05T22:58:20 IST" name="APITests" finished-at="2026-10-05T22:58:25 IST" duration-ms="4790">
+      <class name="com.fasila.automation.api.OpenSkyApiTest">
+        <test-method signature="shouldReturnFlightsNearAbuDhabi()[pri:0, instance:com.fasila.automation.api.OpenSkyApiTest@1e66f1f5]" started-at="2026-10-05T22:58:20 IST" name="shouldReturnFlightsNearAbuDhabi" finished-at="2026-10-05T22:58:22 IST" duration-ms="2221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldReturnFlightsNearAbuDhabi -->
+        <test-method signature="shouldReturnLiveFlightStatesWithValidSchema()[pri:0, instance:com.fasila.automation.api.OpenSkyApiTest@1e66f1f5]" started-at="2026-10-05T22:58:22 IST" name="shouldReturnLiveFlightStatesWithValidSchema" finished-at="2026-10-05T22:58:25 IST" duration-ms="2562" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldReturnLiveFlightStatesWithValidSchema -->
+      </class> <!-- com.fasila.automation.api.OpenSkyApiTest -->
+    </test> <!-- APITests -->
+  </suite> <!-- AirlineFrameworkSuite -->
+</testng-results>

@@ -1,0 +1,7 @@
+# BlazeDemo needs no login, so no credentials are needed here.
+
+# Phase 3 — Gemini API key, used by AITestCaseGenerator.java.
+# Get one for free (no card required) at https://aistudio.google.com/apikey
+# Never commit a real key to GitHub — add config.properties to .gitignore
+# before you push this project in Phase 4.
+gemini.api.key=YOUR_GEMINI_API_KEY

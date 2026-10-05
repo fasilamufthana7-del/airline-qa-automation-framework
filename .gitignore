@@ -1,0 +1,15 @@
+# Maven build output
+target/
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Your real API key lives here — never commit this file.
+# Keep config.properties.example (committed) as the template instead.
+src/test/resources/config.properties

@@ -1,0 +1,39 @@
+{
+  "info": {
+    "name": "OpenSky Flight API - Manual Exploration",
+    "description": "Companion Postman collection for the automated REST Assured tests in OpenSkyApiTest.java. Use this to manually explore the API and see raw responses before/while writing automated assertions.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all live flight states",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://opensky-network.org/api/states/all",
+          "protocol": "https",
+          "host": ["opensky-network", "org"],
+          "path": ["api", "states", "all"]
+        }
+      }
+    },
+    {
+      "name": "Get flights near Abu Dhabi (bounding box)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://opensky-network.org/api/states/all?lamin=24.0&lomin=54.0&lamax=25.2&lomax=55.2",
+          "protocol": "https",
+          "host": ["opensky-network", "org"],
+          "path": ["api", "states", "all"],
+          "query": [
+            {"key": "lamin", "value": "24.0"},
+            {"key": "lomin", "value": "54.0"},
+            {"key": "lamax", "value": "25.2"},
+            {"key": "lomax", "value": "55.2"}
+          ]
+        }
+      }
+    }
+  ]
+}
