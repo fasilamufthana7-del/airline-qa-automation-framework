@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.fasila.automation</groupId>
-    <artifactId>airline-ai-framework</artifactId>
+    <artifactId>banking-ai-framework</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -62,7 +62,7 @@
         </dependency>
 
         <!-- org.json: a small library for building/reading JSON, used by the
-             AI layer to talk to the Claude API. Java's built-in HttpClient
+             AI layer to talk to the Gemini API. Java's built-in HttpClient
              handles the actual HTTP call, so this is the only new dependency
              needed. -->
         <dependency>
@@ -97,6 +97,15 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
+                <configuration>
+                    <!-- Points `mvn test` at the same testng.xml suite you run
+                         in Eclipse (UITests + APITests + the ExtentReports
+                         listener), so CI runs exactly what you've already
+                         verified locally — nothing extra, nothing missing. -->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
             </plugin>
         </plugins>
     </build>
