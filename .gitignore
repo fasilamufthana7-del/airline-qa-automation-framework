@@ -1,5 +1,6 @@
 # Maven build output
 target/
+test-output/
 
 # Eclipse project files
 .classpath
