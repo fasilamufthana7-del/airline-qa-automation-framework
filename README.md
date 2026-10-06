@@ -1,10 +1,6 @@
 # ✈️ Airline QA Automation Framework
 
-!\[CI](https://github.com/fasilamufthana7-del/airline-qa-automation-framework/actions/workflows/ci.yml/badge.svg)
-!\[Java](https://img.shields.io/badge/Java-17-orange)
-!\[Selenium](https://img.shields.io/badge/Selenium-4.24-green)
-!\[Cucumber](https://img.shields.io/badge/Cucumber-BDD-brightgreen)
-!\[REST Assured](https://img.shields.io/badge/REST%20Assured-API%20Testing-blue)
+![CI](https://github.com/fasilamufthana7-del/airline-qa-automation-framework/actions/workflows/ci.yml/badge.svg) ![Java](https://img.shields.io/badge/Java-17-orange) ![Selenium](https://img.shields.io/badge/Selenium-4.24-green) ![Cucumber](https://img.shields.io/badge/Cucumber-BDD-brightgreen) ![REST Assured](https://img.shields.io/badge/REST%20Assured-API%20Testing-blue)
 
 An end-to-end, AI-assisted test automation framework built around an airline/flight-booking workflow — combining UI automation, BDD, REST API testing, and AI-generated test scenarios in a single Java/Maven project, with a CI/CD pipeline that runs the full suite on every push.
 
