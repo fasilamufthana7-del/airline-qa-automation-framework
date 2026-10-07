@@ -1,0 +1,22 @@
+ID,Module,Requirement,Title,Preconditions,Steps,Expected Result,Type,Priority
+TC-001,DCS,DCS-03,Check-in issues boarding pass,Flight open; pax not checked in,1. Search PNR 2. Check in 3. Assign seat 3A,Status CHECKED_IN; boarding pass shows seat 3A,Manual,High
+TC-002,DCS,DCS-02,Duplicate seat rejected,Seat 3A already taken,Assign 3A to a second pax,Error 'seat already taken'; no duplicate row in DB,Manual+DB,High
+TC-003,DCS,DCS-04,Unchecked pax cannot board,Pax NOT_CHECKED,Scan pax at gate,Boarding denied; status stays NOT_BOARDED,Manual,High
+TC-004,DCS,DCS-05,Check-in blocked after flight close,Flight CLOSED,Attempt new check-in,Error 'flight closed',Manual,High
+TC-005,DCS,DCS-06,Check-in at capacity-1 accepted,"Capacity 3, 2 checked in",Check in third pax,Accepted,Manual,Medium
+TC-006,DCS,DCS-06,Check-in at capacity rejected,"Capacity 3, 3 checked in",Check in fourth pax,Rejected / overbooking flow triggered,Manual,High
+TC-007,DCS,DCS-01,Seat saved correctly in DB,Pax checked in with seat 3A,Run V3 query,Zero rows (no checked-in pax without seat),DB,Medium
+TC-008,BHS,BHS-01,Bag tag is 10 digits,Pax checked in,Add 1 bag,Tag is exactly 10 numeric characters,Manual+DB,High
+TC-009,BHS,BHS-01,Bag tag uniqueness,Two bags added,Compare tags,Tags differ; unique constraint holds,DB,High
+TC-010,BHS,BHS-02,Bag at 32.0 kg accepted,Pax checked in,Add bag 32.0 kg,Accepted,Manual,Medium
+TC-011,BHS,BHS-02,Bag at 32.1 kg rejected,Pax checked in,Add bag 32.1 kg,Rejected with overweight message,Manual,High
+TC-012,BHS,BHS-03,Bag status lifecycle,Bag checked in,Scan at sorter then load,CHECKED_IN -> SORTED -> LOADED in order,Manual+DB,High
+TC-013,BHS,BHS-04,No-show bag offloaded,Bag LOADED; pax not boarded,Run flight close,Pax NO_SHOW; bag OFFLOADED; V5 returns zero rows,Manual+DB,Critical
+TC-014,BHS,BHS-05,Missing sorter scan flagged,Bag has LOADED but no SORTED event,Run V8,Bag flagged MISHANDLED,DB,Medium
+TC-015,BHS,BHS-05,Audit trail order and timestamps,Bag fully processed,Query bag_events by bag_id,Events in chronological order with locations,DB,Medium
+TC-016,DIS,DIS-01,Delay updates ETD,Flight sched 14:00,Record 90-min delay,Status DELAYED; est_dep 15:30; sched_dep unchanged,Manual+DB,High
+TC-017,DIS,DIS-01,Zero or negative delay rejected,Flight scheduled,Record 0 and -10 minute delay,Validation error,Manual,Low
+TC-018,DIS,DIS-02,Cancellation queues all pax for rebooking,Flight has 2 pax,Cancel flight,All pax in rebookings as PENDING; V9 zero rows,Manual+DB,Critical
+TC-019,DIS,DIS-02,Cancelled flight blocks check-in,Flight CANCELLED,Attempt check-in,Rejected,Manual,High
+TC-020,DIS,DIS-03,Rebooking moves bag to new flight,Pax rebooked XY303 -> XY304,Confirm rebooking; run V11,Bag tagged to XY304; V11 zero rows,Manual+DB,High
+TC-021,DIS,DIS-03,Rebooking to a full flight,Target flight at capacity,Attempt rebooking,Rejected or waitlisted; no overbooking,Manual,Medium
